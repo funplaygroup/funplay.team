@@ -1,8 +1,13 @@
 <template>
   <div class="hello">
     <div class="body"></div>
-    <div class="header"></div>
-    <div class="logo"></div>   
+    <div class="header">
+      <div class="logo"></div>   
+      <div class="header_home">HOME</div>
+      <div class="header_about">ABOUT US</div>
+      <div class="header_contact">CONTACT</div>
+
+    </div>
     <div class="main"></div>
     <div class="about">about us</div>
     <div class="slogan">
@@ -15,7 +20,18 @@
     <div class="email"></div>  
     <div class="email_text">Enter you email</div>  
     <div class="subscribe"></div> 
-    <div class="subscribe_text">Subscribe</div>        
+    <div class="subscribe_text">Subscribe</div>  
+    <div class="bottom">
+      <div class="bottom_logo">
+            <!-- <div class="logo"></div>    -->
+      </div>
+      <div class="copyright">
+            Copyrights © ️2021 PLAYFUN . All rights reserved.
+      </div>
+
+    </div>        
+            
+      
   </div>
 </template>
 
@@ -53,6 +69,58 @@ a {
   left: 0px;
   top: 0px;
   background: #000000;
+}
+.header_home {
+/* HOME */
+position: absolute;
+width: 40px;
+height: 16px;
+left: 1077px;
+top: 23px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
+
+}
+.header_about{
+/* ABOUT US */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 1182px;
+top: 22px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
+}
+
+.header_contact{
+/* CONTACT */
+
+position: absolute;
+width: 80px;
+height: 16px;
+left: 1301px;
+top: 23px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
 }
 
 .body{
@@ -205,6 +273,51 @@ height: 16px;
 left: 865px;
 top: 1256px;
 
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
+}
+
+.bottom{
+  /* Rectangle 22 */
+  position: absolute;
+  width: 1440px;
+  height: 250px;
+  left: 0px;
+  top: 1364px;
+  background: #000000;
+}
+
+.bottom_logo{
+  /* Vector */
+
+/* Vector */
+
+position: absolute;
+left: 48.47%;
+right: 47.36%;
+top: 15%;
+bottom: 10.64%;
+height:64px;
+width: 64px;
+  background: url("../assets/logo.png") no-repeat;
+  background-position: center;
+  background-color: #E61F19;
+}
+.copyright{
+  /* Copyrights © ️2021 PLAYFUN . All rights reserved. */
+
+position: absolute;
+width: 330px;
+height: 16px;
+left: 38%;
+right: 47.36%;
+top: 80%;
+bottom: 10.64%;
 font-family: Roboto;
 font-style: normal;
 font-weight: normal;
