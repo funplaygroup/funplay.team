@@ -1,32 +1,21 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <div class="body"></div>
+    <div class="header"></div>
+    <div class="logo"></div>   
+    <div class="main"></div>
+    <div class="about">about us</div>
+    <div class="slogan">
+      <p>We are a funny community!</p>
+      <p>We are a win-win community!</p>
+      <p>We will lead more people into the meta universe!</p>
+    </div>
+    <div class="contact"></div>        
+    <div class="contact_text">Get the latest news about us!</div>        
+    <div class="email"></div>  
+    <div class="email_text">Enter you email</div>  
+    <div class="subscribe"></div> 
+    <div class="subscribe_text">Subscribe</div>        
   </div>
 </template>
 
@@ -54,5 +43,174 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.header {
+  /* Rectangle 16 */
+  position: absolute;
+  width: 1440px;
+  height: 60px;
+  left: 0px;
+  top: 0px;
+  background: #000000;
+}
+
+.body{
+/* Rectangle 17 */
+
+position: absolute;
+width: 1440px;
+height: 1410px;
+left: 0px;
+top: 10px;
+
+background: #121212;
+
+}
+
+.main{
+  /* playfun-kv 1 */
+  position: absolute;
+  width: 1440px;
+  height: 728px;
+  left: 0px;
+  top: 60px;
+  background: url("../assets/funplay-bg.png") no-repeat;
+}
+
+.logo{
+  /* Vector */
+
+  position: absolute;
+  left: 0%;
+  right: 95.83%;
+  top: 0%;
+  bottom: 96.39%;
+  height:64px;
+  width: 64px;
+  background: url("../assets/logo.png") no-repeat;
+  background-position: center;
+  background-color: #E61F19;
+}
+
+.about{
+/* ABOUT US */
+position: absolute;
+width: 958px;
+height: 70px;
+left: 242px;
+top: 843px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 900;
+font-size: 60px;
+line-height: 70px;
+text-align: center;
+
+color: #FFFFFF;
+}
+
+.slogan{
+/* FUNPLAY IS A PLAY-TO-EARN GAMING GUILD, BRINGING PLAYERS TOGETHER TO EARN VIA BLOCKCHAIN-BASED ECONOMIES. WE ARE THE SETTLERS OF NEW WORLDS IN THE METAVERSE */
+
+  position: absolute;
+  width: 958px;
+  height: 105px;
+  left: 242px;
+  top: 931px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 3px;
+  text-align: center;
+
+  color: #FFFFFF;
+}
+
+.contact{
+  /* Rectangle 19 */
+  position: absolute;
+  width: 1440px;
+  height: 283px;
+  left: 1px;
+  top: 1102px;
+  background: #E61F19;
+}
+
+.contact_text{
+/* Get the lates on funplay group */
+
+  position: absolute;
+  width: 600px;
+  height: 47px;
+  left: 400px;
+  top: 1173px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 47px;
+  /* identical to box height */
+
+  color: #FFFFFF;
+}
+
+.email{
+/* Rectangle 20 */
+position: absolute;
+width: 355px;
+height: 38px;
+left: 455px;
+top: 1245px;
+
+background: #FFFFFF;
+}
+.email_text{
+/* Enter you email */
+
+position: absolute;
+width: 160px;
+height: 16px;
+left: 469px;
+top: 1256px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #757575;
+}
+
+.subscribe{
+/* Rectangle 21 */
+  position: absolute;
+  width: 169px;
+  height: 38px;
+  left: 825px;
+  top: 1244px;
+  background: #000000;
+}
+.subscribe_text{
+  /* GET UPDATES */
+
+position: absolute;
+width: 90px;
+height: 16px;
+left: 865px;
+top: 1256px;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+
+color: #FFFFFF;
 }
 </style>
