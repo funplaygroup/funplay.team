@@ -8,9 +8,9 @@
         <a-col :xs="16"> </a-col>
         <a-col :xs="4">
           <div class="tab">
-            <div class="tab-home">HOME</div>
-            <div class="tab-about">ABOUT AS</div>
-            <div class="tab-contact">CONTACT</div>
+            <div class="tab-home" @click="goAnchor('home')">HOME</div>
+            <div class="tab-about" @click="goAnchor('about')">ABOUT AS</div>
+            <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div>
           </div>
         </a-col>
       </a-row>
@@ -23,9 +23,9 @@
         <a-col :xs="4"> </a-col>
       </a-row>
     </div>
-    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc"> </a-row>
-    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc"> </a-row>
-    <a-row v-if="ismOrpc === 'PCoperation'" class="about-row-pc">
+    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc" id="home"> </a-row>
+    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc" id="home"> </a-row>
+    <a-row v-if="ismOrpc === 'PCoperation'" class="about-row-pc" id="about">
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
         We are a funny community!<br />
@@ -33,7 +33,7 @@
         We will lead more people into the meta universe!
       </div>
     </a-row>
-    <a-row v-if="ismOrpc === 'Moperation'" class="about-row-mc">
+    <a-row v-if="ismOrpc === 'Moperation'" class="about-row-mc" id="about">
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
         We are a funny community!<br />
@@ -41,14 +41,14 @@
         We will lead more people into the meta universe!
       </div>
     </a-row>
-    <a-row v-if="ismOrpc === 'PCoperation'" class="sub-row-pc">
+    <a-row v-if="ismOrpc === 'PCoperation'" class="sub-row-pc" id="contact">
       <div class="sub-title">Get the latest news about us!</div>
       <div class="sub-form">
         <a-input placeholder="Enter you email" class="sub-input" v-model="input" />
         <div class="sub-btn" @click="onClick">Subscribe</div>
       </div>
     </a-row>
-    <a-row v-if="ismOrpc === 'Moperation'" class="sub-row-mc">
+    <a-row v-if="ismOrpc === 'Moperation'" class="sub-row-mc" id="contact">
       <div class="sub-title-mc">Get the latest news about us!</div>
       <div class="sub-form-mc">
         <a-input placeholder="Enter you email" class="sub-input-mc" v-model="input" />
@@ -96,6 +96,15 @@ export default {
         description: desc,
       });
     },
+    goAnchor(id) {
+      var anchor = document.getElementById(id);
+      // chrome
+      document.body.scrollTop = anchor.offsetTop;
+      // firefox
+      document.documentElement.scrollTop = anchor.offsetTop;
+      // safari
+      window.pageYOffset = anchor.offsetTop;
+    },
   },
 };
 </script>
@@ -130,6 +139,9 @@ export default {
           border-bottom: 1px solid #e61f19;
           color: #e61f19;
         }
+      }
+      .tab:hover {
+        cursor: pointer;
       }
     }
   }
@@ -197,7 +209,7 @@ export default {
     height: 290px;
     background-color: #e61f19;
     .sub-title {
-      width: 30%;
+      min-width: 30%;
 
       text-align: center;
       font-size: 36px;
@@ -238,7 +250,6 @@ export default {
     .sub-title-mc {
       text-align: center;
       color: white;
-
       font-size: 24px;
     }
     .sub-form-mc {
