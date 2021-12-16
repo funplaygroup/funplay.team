@@ -28,34 +28,31 @@
     <a-row v-if="ismOrpc === 'PCoperation'" class="about-row-pc">
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
-        FUNPLAY IS A PLAY-TO-EARN GAMING GUILD, BRINGING PLAYERS <br />
-        TOGETHER TO EARN VIA BLOCKCHAIN-BASED ECONOMIES. WE ARE<br />
-        THE SETTLERS OF NEW WORLDS IN THE METAVERSE
+        We are a funny community!<br />
+        We are a win-win community!<br />
+        We will lead more people into the meta universe!
       </div>
     </a-row>
     <a-row v-if="ismOrpc === 'Moperation'" class="about-row-mc">
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
-        FUNPLAY IS A PLAY-TO-EARN GAMING <br />
-        GUILD, BRINGING PLAYERS TOGETHER <br />
-        TO EARN VIA BLOCKCHAIN-BASED ECONOMIES. WE ARE THE SETTLERS OF
-
-        <br />
-        NEW WORLDS IN THE METAVERSE
+        We are a funny community!<br />
+        We are a win-win community!<br />
+        We will lead more people into the meta universe!
       </div>
     </a-row>
     <a-row v-if="ismOrpc === 'PCoperation'" class="sub-row-pc">
-      <div class="sub-title">Get the lates on funplay group</div>
+      <div class="sub-title">Get the latest news about us!</div>
       <div class="sub-form">
         <a-input placeholder="Enter you email" class="sub-input" v-model="input" />
-        <div class="sub-btn" @click="onClick">GET UPDATES</div>
+        <div class="sub-btn" @click="onClick">Subscribe</div>
       </div>
     </a-row>
     <a-row v-if="ismOrpc === 'Moperation'" class="sub-row-mc">
-      <div class="sub-title-mc">Get the lates on funplay group</div>
+      <div class="sub-title-mc">Get the latest news about us!</div>
       <div class="sub-form-mc">
         <a-input placeholder="Enter you email" class="sub-input-mc" v-model="input" />
-        <div class="sub-btn-mc" @click="onClick">GET UPDATES</div>
+        <div class="sub-btn-mc" @click="onClick">Subscribe</div>
       </div>
     </a-row>
     <a-row class="footer-row-pc">
