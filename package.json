@@ -8,7 +8,7 @@
     "production": "vue-cli-service serve --mode production",
     "build-dev": "vue-cli-service build --mode development",
     "build-test": "vue-cli-service build --mode test",
-    "build-production": "vue-cli-service build --mode production"
+    "build-pro": "vue-cli-service build --mode production"
   },
   "dependencies": {
     "ant-design-vue": "^1.7.8",
