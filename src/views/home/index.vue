@@ -175,7 +175,7 @@ export default {
     }
   }
   .about-row-mc {
-    min-height: 250px;
+    min-height: 200px;
     background-color: #121212;
     .about-title {
       text-align: center;
