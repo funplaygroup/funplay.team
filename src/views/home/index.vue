@@ -57,7 +57,7 @@
     </a-row>
     <a-row class="footer-row-pc">
       <div class="footer-logo-pc"></div>
-      <div class="footer-community-pc"></div>
+      <div class="footer-community-pc" @click="toTwitter"></div>
     </a-row>
   </div>
 </template>
@@ -104,6 +104,9 @@ export default {
       document.documentElement.scrollTop = anchor.offsetTop;
       // safari
       window.pageYOffset = anchor.offsetTop;
+    },
+    toTwitter() {
+      window.open("https://twitter.com/funplaygroup", "_blank");
     },
   },
 };
@@ -290,13 +293,16 @@ export default {
       background-position: center;
     }
     .footer-community-pc {
-      width: 307px;
+      width: 200px;
       height: 101px;
-      background-image: url("../../assets/images/community-icon-pc.png");
+      background-image: url("../../assets/images/Group 21.png");
       background-repeat: no-repeat;
       background-size: contain;
       margin: 0 auto;
       margin-top: 20px;
+    }
+    .footer-community-pc:hover {
+      cursor: pointer;
     }
   }
 }
