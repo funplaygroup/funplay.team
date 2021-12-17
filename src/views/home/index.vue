@@ -151,8 +151,8 @@ export default {
   }
   .banner-row-pc {
     width: 100%;
-    height: 900px;
-    background-image: url("../../assets/images/pcBanner.png");
+    height: 100%;
+    background-image: url("../../assets/images/pcBanner.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
 
