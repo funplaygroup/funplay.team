@@ -122,14 +122,15 @@ export default {
     /deep/.ant-row,
     .ant-col {
       height: 100%;
+      padding-top: 2px;
+
       .logo {
         width: 60px;
         height: 60px;
-        background-color: #e61f19;
-        background-image: url("../../assets/images/logo.png");
-        background-size: 70%;
+
+        background-image: url("../../assets/images/Group 19.png");
         background-repeat: no-repeat;
-        background-position: center;
+        background-size: contain;
       }
       .tab {
         width: 100%;
@@ -281,13 +282,12 @@ export default {
     height: 300px;
     background: #000;
     .footer-logo-pc {
-      height: 60px;
-      width: 60px;
-      background-color: #e61f19;
+      height: 100px;
+      width: 100px;
       margin: 0 auto;
       margin-top: 20px;
-      background-image: url("../../assets/images/logo.png");
-      background-size: 70%;
+      background-image: url("../../assets/images/Group 19.png");
+      background-size: cover;
 
       background-repeat: no-repeat;
       background-position: center;
