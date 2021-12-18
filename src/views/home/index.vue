@@ -8,9 +8,9 @@
         <a-col :xs="16"> </a-col>
         <a-col :xs="4">
           <div class="tab">
-            <div class="tab-home" @click="goAnchor('home')">HOME</div>
+            <div  @click="goAnchor('home')">HOME</div>
             <div class="tab-about" @click="goAnchor('about')">ABOUT AS</div>
-            <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div>
+            <!-- <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div> -->
           </div>
         </a-col>
       </a-row>
@@ -56,7 +56,7 @@
       </div>
     </a-row>
     <a-row class="footer-row-pc">
-      <div class="footer-logo-pc"></div>
+      <!-- <div class="footer-logo-pc"></div> -->
       <div class="footer-community-pc" @click="toTwitter"></div>
     </a-row>
   </div>
@@ -118,7 +118,10 @@ export default {
   background-color: gray;
   .header {
     height: 60px;
-    background-color: #000000;
+    width: 100%;
+    position: fixed;
+    z-index: 999;
+    background-color:rgba(0,0,0,0.0);
     /deep/.ant-row,
     .ant-col {
       height: 100%;
@@ -127,7 +130,7 @@ export default {
       .logo {
         width: 60px;
         height: 60px;
-
+        display:fixed;
         background-image: url("../../assets/images/Group 19.png");
         background-repeat: no-repeat;
         background-size: contain;
