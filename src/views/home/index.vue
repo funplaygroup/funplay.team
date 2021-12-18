@@ -8,7 +8,7 @@
         <a-col :xs="16"> </a-col>
         <a-col :xs="4">
           <div class="tab">
-            <div  @click="goAnchor('home')">HOME</div>
+            <div @click="goAnchor('home')">HOME</div>
             <div class="tab-about" @click="goAnchor('about')">ABOUT AS</div>
             <!-- <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div> -->
           </div>
@@ -23,8 +23,10 @@
         <a-col :xs="4"> </a-col>
       </a-row>
     </div>
-    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc" id="home"> </a-row>
-    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc" id="home"> </a-row>
+    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc" id="home">
+    </a-row>
+    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc" id="home">
+    </a-row>
     <a-row v-if="ismOrpc === 'PCoperation'" class="about-row-pc" id="about">
       <div class="about-title">ABOUT US</div>
       <div class="about-desc">
@@ -44,21 +46,35 @@
     <a-row v-if="ismOrpc === 'PCoperation'" class="sub-row-pc" id="contact">
       <div class="sub-title">Get the latest news about us!</div>
       <div class="sub-form">
-        <a-input placeholder="Enter you email" class="sub-input" v-model="input" />
+        <a-input
+          placeholder="Enter you email"
+          class="sub-input"
+          v-model="input"
+        />
         <div class="sub-btn" @click="onClick">Subscribe</div>
       </div>
     </a-row>
     <a-row v-if="ismOrpc === 'Moperation'" class="sub-row-mc" id="contact">
       <div class="sub-title-mc">Get the latest news about us!</div>
       <div class="sub-form-mc">
-        <a-input placeholder="Enter you email" class="sub-input-mc" v-model="input" />
+        <a-input
+          placeholder="Enter you email"
+          class="sub-input-mc"
+          v-model="input"
+        />
         <div class="sub-btn-mc" @click="onClick">Subscribe</div>
       </div>
     </a-row>
     <a-row class="footer-row-pc">
       <!-- <div class="footer-logo-pc"></div> -->
-      <div class="footer-community-pc" @click="toTwitter"></div>
+      <div class="footer-community-pc-twitter" @click="toTwitter"></div>
+      <div class="footer-community-pc-github" @click="toGithub"></div>
     </a-row>
+    <!-- © 2021 Polygon technology -->
+    <a-row class="footer-copyright">
+      <div class="footer-copyright-txt">© 2021 funplay group</div>
+    </a-row>
+
   </div>
 </template>
 
@@ -85,9 +101,17 @@ export default {
   methods: {
     onClick() {
       if (this.input != "") {
-        this.openNotificationWithIcon("success", "Success", "Successfully subscribed！");
+        this.openNotificationWithIcon(
+          "success",
+          "Success",
+          "Successfully subscribed！"
+        );
       } else {
-        this.openNotificationWithIcon("warning", "Warning", "Please input your email");
+        this.openNotificationWithIcon(
+          "warning",
+          "Warning",
+          "Please input your email"
+        );
       }
     },
     openNotificationWithIcon(type, message, desc) {
@@ -108,6 +132,9 @@ export default {
     toTwitter() {
       window.open("https://twitter.com/funplaygroup", "_blank");
     },
+    toGithub() {
+      window.open("https://github.com/funplaygroup", "_blank");
+    },
   },
 };
 </script>
@@ -121,7 +148,7 @@ export default {
     width: 100%;
     position: fixed;
     z-index: 999;
-    background-color:rgba(0,0,0,0.0);
+    background-color: rgba(0, 0, 0, 0);
     /deep/.ant-row,
     .ant-col {
       height: 100%;
@@ -130,7 +157,7 @@ export default {
       .logo {
         width: 60px;
         height: 60px;
-        display:fixed;
+        display: fixed;
         background-image: url("../../assets/images/Group 19.png");
         background-repeat: no-repeat;
         background-size: contain;
@@ -158,10 +185,6 @@ export default {
     background-image: url("../../assets/images/pcBanner.jpg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
-    // /deep/.ant-col {
-    //   height: 100%;
-    // }
   }
   .banner-row-mc {
     width: 100%;
@@ -169,13 +192,9 @@ export default {
     background-image: url("../../assets/images/mcBanner.png");
     background-repeat: no-repeat;
     background-size: 100% 100%;
-
-    // /deep/.ant-col {
-    //   height: 100%;
-    // }
   }
   .about-row-pc {
-    height: 250px;
+    height: 300px;
     background-color: #121212;
     .about-title {
       text-align: center;
@@ -213,7 +232,7 @@ export default {
   }
   .sub-row-pc {
     width: 100%;
-    height: 290px;
+    height: 300px;
     background-color: #e61f19;
     .sub-title {
       min-width: 30%;
@@ -282,30 +301,38 @@ export default {
     }
   }
   .footer-row-pc {
-    height: 300px;
+    height: 150px;
     background: #000;
-    .footer-logo-pc {
-      height: 100px;
-      width: 100px;
-      margin: 0 auto;
-      margin-top: 20px;
-      background-image: url("../../assets/images/Group 19.png");
-      background-size: cover;
-
-      background-repeat: no-repeat;
-      background-position: center;
-    }
-    .footer-community-pc {
-      width: 200px;
-      height: 101px;
-      background-image: url("../../assets/images/Group 21.png");
+    display: flex;
+    justify-content: center;
+    .footer-community-pc-twitter {
+      width: 50px;
+      height: 50px;
+      background-image: url("../../assets/images/twitter-svg.svg");
       background-repeat: no-repeat;
       background-size: contain;
-      margin: 0 auto;
-      margin-top: 20px;
-    }
-    .footer-community-pc:hover {
+      margin-top: 50px;
+      margin-inline: 20px;
       cursor: pointer;
+    }
+    .footer-community-pc-github {
+      width: 50px;
+      height: 50px;
+      background-image: url("../../assets/images/github-svg.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin-top: 50px;
+      margin-inline: 20px;
+      cursor: pointer;
+    }
+  }
+  .footer-copyright{
+    height: 50px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    .footer-copyright-txt{
+      color: white;
     }
   }
 }
