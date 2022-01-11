@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" id = "home">
     <div class="header">
       <a-row v-if="ismOrpc === 'PCoperation'">
         <a-col :xs="4">
@@ -23,9 +23,9 @@
         <a-col :xs="4"> </a-col>
       </a-row>
     </div>
-    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc" id="home">
+    <a-row v-if="ismOrpc === 'PCoperation'" class="banner-row-pc" id="banner">
     </a-row>
-    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc" id="home">
+    <a-row v-if="ismOrpc === 'Moperation'" class="banner-row-mc" id="banner">
     </a-row>
     <a-row v-if="ismOrpc === 'PCoperation'" class="about-row-pc" id="about">
       <div class="about-title">ABOUT US</div>
@@ -97,6 +97,28 @@ export default {
       this.ismOrpc = "PCoperation";
     }
     console.log(this.ismOrpc);
+  },
+  mounted() {
+      for (var i = 0; i < 200; i++) {
+
+      var starStyle =
+        'animation: twinkle ' +
+        (Math.random() * 5 + 5) +
+        "s linear " +
+        (Math.random() * 5 + 5) +
+        "s infinite; top: " +
+        Math.random() * document.getElementById("banner").clientHeight/3 +
+        "px; left: " +
+        Math.random() * document.getElementById("banner").clientWidth +
+        'px;"';
+
+      var abc = document.createElement('div');
+      abc.className = 'star';
+      abc.style.cssText = starStyle;
+      var ref = document.getElementById('about');
+      var  list = document.getElementById('home');
+      list.insertBefore(abc, ref);
+    }
   },
   methods: {
     onClick() {
@@ -335,5 +357,38 @@ export default {
       color: white;
     }
   }
+
 }
+</style>
+
+<style>
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: rgba(255,255,255,0.0);
+  border-radius: 5px;
+}
+
+  @keyframes twinkle {
+    0% {
+      transform: scale(1, 1);
+      background: rgba(255, 255, 255, 0);
+      animation-timing-function: ease-in;
+    }
+    60% {
+      transform: scale(0.8, 0.8);
+      background: rgba(255, 255, 255, 1);
+      animation-timing-function: ease-out;
+    }
+    80% {
+      background: rgba(255, 255, 255, 0);
+      transform: scale(1, 1);
+    }
+    100% {
+      background: rgba(255, 255, 255, 0);
+      transform: scale(1, 1);
+    }
+  }
+
 </style>
