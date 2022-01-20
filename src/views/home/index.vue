@@ -8,8 +8,8 @@
         <a-col :xs="16"> </a-col>
         <a-col :xs="4">
           <div class="tab">
-            <div @click="goAnchor('home')">HOME</div>
-            <div class="tab-about" @click="goAnchor('about')">ABOUT AS</div>
+            <div id = "home_btn" @click="goAnchor('home','home_btn')">HOME</div>
+            <div id = "about_btn" class="tab-about" @click="goAnchor('about','about_btn')">ABOUT AS</div>
             <!-- <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div> -->
           </div>
         </a-col>
@@ -142,7 +142,18 @@ export default {
         description: desc,
       });
     },
-    goAnchor(id) {
+    goAnchor(id,btn_id) {
+      if (btn_id == "home_btn") {
+        var homebtn = document.getElementById("home_btn");
+        homebtn.style.color="#ff0000"
+        var aboutbtn = document.getElementById("about_btn");
+        aboutbtn.style.color="#ffffff"
+      } else{
+        var homebtn = document.getElementById("home_btn");
+        homebtn.style.color="#ffffff"
+        var aboutbtn = document.getElementById("about_btn");
+        aboutbtn.style.color="#ff0000"
+      }
       var anchor = document.getElementById(id);
       // chrome
       document.body.scrollTop = anchor.offsetTop;
