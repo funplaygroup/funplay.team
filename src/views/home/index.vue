@@ -1,16 +1,35 @@
 <template>
-  <div class="home" id = "home">
+  <div class="home" id="home">
     <div class="header">
       <a-row v-if="ismOrpc === 'PCoperation'">
         <a-col :xs="4">
           <div class="logo"></div>
         </a-col>
-        <a-col :xs="16"> </a-col>
+        <a-col :xs="12"> </a-col>
+        <a-col :xs="4">
+        <div class="tab"  @click="toWhitePaper">
+          <a-button ghost>
+            WHITE PAPER
+          </a-button>
+        </div>
+        </a-col>
         <a-col :xs="4">
           <div class="tab">
-            <div id = "home_btn" @click="goAnchor('home','home_btn')">HOME</div>
-            <div id = "about_btn" class="tab-about" @click="goAnchor('about','about_btn')">ABOUT AS</div>
-            <!-- <div class="tab-contact" @click="goAnchor('contact')">CONTACT</div> -->
+            <div id="home_btn" @click="goAnchor('home', 'home_btn')">
+              <a-button type="link" ghost>
+                HOME
+              </a-button>
+            </div>
+            <div
+              id="about_btn"
+              class="tab-about"
+              @click="goAnchor('about', 'about_btn')"
+            >
+              <a-button type="link" ghost>
+                ABOUT US
+              </a-button>
+
+            </div>
           </div>
         </a-col>
       </a-row>
@@ -19,7 +38,15 @@
         <a-col :xs="4">
           <div class="logo"></div>
         </a-col>
-        <a-col :xs="16"> </a-col>
+        <a-col :xs="12"> </a-col>
+        <a-col :xs="4">
+        <div class="tab"  @click="toWhitePaper">
+          <a-button ghost>
+            WHITE PAPER
+          </a-button>
+        </div>
+        </a-col>
+
         <a-col :xs="4"> </a-col>
       </a-row>
     </div>
@@ -74,7 +101,6 @@
     <a-row class="footer-copyright">
       <div class="footer-copyright-txt">© 2021 funplay group</div>
     </a-row>
-
   </div>
 </template>
 
@@ -99,24 +125,23 @@ export default {
     console.log(this.ismOrpc);
   },
   mounted() {
-      for (var i = 0; i < 200; i++) {
-
+    for (var i = 0; i < 200; i++) {
       var starStyle =
-        'animation: twinkle ' +
+        "animation: twinkle " +
         (Math.random() * 5 + 5) +
         "s linear " +
         (Math.random() * 5 + 5) +
         "s infinite; top: " +
-        Math.random() * document.getElementById("banner").clientHeight/3 +
+        (Math.random() * document.getElementById("banner").clientHeight) / 3 +
         "px; left: " +
         Math.random() * document.getElementById("banner").clientWidth +
         'px;"';
 
-      var abc = document.createElement('div');
-      abc.className = 'star';
+      var abc = document.createElement("div");
+      abc.className = "star";
       abc.style.cssText = starStyle;
-      var ref = document.getElementById('about');
-      var  list = document.getElementById('home');
+      var ref = document.getElementById("about");
+      var list = document.getElementById("home");
       list.insertBefore(abc, ref);
     }
   },
@@ -142,18 +167,7 @@ export default {
         description: desc,
       });
     },
-    goAnchor(id,btn_id) {
-      if (btn_id == "home_btn") {
-        var homebtn = document.getElementById("home_btn");
-        homebtn.style.color="#ff0000"
-        var aboutbtn = document.getElementById("about_btn");
-        aboutbtn.style.color="#ffffff"
-      } else{
-        var homebtn = document.getElementById("home_btn");
-        homebtn.style.color="#ffffff"
-        var aboutbtn = document.getElementById("about_btn");
-        aboutbtn.style.color="#ff0000"
-      }
+    goAnchor(id, btn_id) {
       var anchor = document.getElementById(id);
       // chrome
       document.body.scrollTop = anchor.offsetTop;
@@ -167,6 +181,12 @@ export default {
     },
     toGithub() {
       window.open("https://github.com/funplaygroup", "_blank");
+    },
+    toWhitePaper() {
+      window.open(
+        "https://mirror.xyz/0xFBF5b83F534e54870E32f8969dd8F7836AD02CB9",
+        "_blank"
+      );
     },
   },
 };
@@ -377,29 +397,28 @@ export default {
   position: absolute;
   width: 3px;
   height: 3px;
-  background: rgba(255,255,255,0.0);
+  background: rgba(255, 255, 255, 0);
   border-radius: 5px;
 }
 
-  @keyframes twinkle {
-    0% {
-      transform: scale(1, 1);
-      background: rgba(255, 255, 255, 0);
-      animation-timing-function: ease-in;
-    }
-    60% {
-      transform: scale(0.8, 0.8);
-      background: rgba(255, 255, 255, 1);
-      animation-timing-function: ease-out;
-    }
-    80% {
-      background: rgba(255, 255, 255, 0);
-      transform: scale(1, 1);
-    }
-    100% {
-      background: rgba(255, 255, 255, 0);
-      transform: scale(1, 1);
-    }
+@keyframes twinkle {
+  0% {
+    transform: scale(1, 1);
+    background: rgba(255, 255, 255, 0);
+    animation-timing-function: ease-in;
   }
-
+  60% {
+    transform: scale(0.8, 0.8);
+    background: rgba(255, 255, 255, 1);
+    animation-timing-function: ease-out;
+  }
+  80% {
+    background: rgba(255, 255, 255, 0);
+    transform: scale(1, 1);
+  }
+  100% {
+    background: rgba(255, 255, 255, 0);
+    transform: scale(1, 1);
+  }
+}
 </style>
