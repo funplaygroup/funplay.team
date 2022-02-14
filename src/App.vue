@@ -28,4 +28,12 @@ export default {
 };
 </script>
 
-<style lang="less"></style>
+<style lang="less">
+@import "./assets/css/font/font.css";
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #252527;
+}
+</style>

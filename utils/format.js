@@ -197,3 +197,12 @@ export function significantDigits(arg1) {
   }
   return new BigNumber(arg1).toString();
 }
+
+export function ellipsis(value) {
+  let len = value.length;
+  if (!value) return "";
+  if (value.length > 20) {
+    return value.substring(0, 6) + "......" + value.substring(len - 4, len);
+  }
+  return value;
+}
