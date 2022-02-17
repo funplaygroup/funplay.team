@@ -121,6 +121,14 @@
         </a-collapse-panel>
       </a-collapse>
     </div>
+    <div class="community">
+      <div class="left"></div>
+      <div class="right">
+        <div class="discord" @click="onLink('discord')"></div>
+        <div class="twitter" @click="onLink('twitter')"></div>
+      </div>
+    </div>
+    <div class="footer"></div>
   </div>
 </template>
 
@@ -520,7 +528,7 @@ export default {
     background-size: contain;
   }
   .faq {
-    min-height: 650px;
+    min-height: 600px;
     width: 100%;
     .faq-logo {
       width: 145px;
@@ -528,6 +536,53 @@ export default {
       background-image: url("../../assets/images/faq.png");
       margin: 0 auto;
     }
+  }
+  .community {
+    height: 90px;
+    width: 65%;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    .left {
+      width: 1034px;
+      height: 90px;
+      background-image: url("../../assets/images/logo-footer.png");
+    }
+    .right {
+      width: 75px;
+      height: 32px;
+      display: flex;
+      justify-content: space-between;
+      .twitter {
+        width: 32px;
+        height: 32px;
+        background-image: url("../../assets/images/twitter.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .twitter:hover {
+        cursor: pointer;
+      }
+      .discord {
+        width: 32px;
+        height: 32px;
+        background-image: url("../../assets/images/discord.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .discord:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  .footer {
+    height: 100px;
+    width: 100%;
+    background-image: url("../../assets/images/footer-bg.png");
+    margin-top: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .ant-collapse {
     width: 60%;
