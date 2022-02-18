@@ -4,10 +4,10 @@
       <div class="left"></div>
       <div class="mid">
         <div class="text">FunPlay</div>
-        <div class="text">Team</div>
-        <div class="text">Roadmap</div>
-        <div class="text">FAQ</div>
-        <div class="text">WhitePaper</div>
+        <div class="text" @click="goAnchor('team')">Team</div>
+        <div class="text" @click="goAnchor('road')">Roadmap</div>
+        <div class="text" @click="goAnchor('faq')">FAQ</div>
+        <div class="text" @click="openLink">WhitePaper</div>
       </div>
       <div class="right">
         <div class="connect" @click="onConnect" v-if="connect === 'CONNECT WALLET'">CONNECT WALLET</div>
@@ -39,7 +39,7 @@
         </ul>
       </vue-seamless-scroll>
     </div>
-    <div class="whitepaper">
+    <div class="whitepaper" id="whitepaper">
       <div class="whitepaper-title">FunPlay</div>
       <div class="whitepaper-block"></div>
       <div class="whitepaper-content">
@@ -51,14 +51,14 @@
         </div>
       </div>
     </div>
-    <div class="road">
+    <div class="road" id="road">
       <div class="logo"></div>
       <div class="roadlogo"></div>
       <div class="roadline"></div>
       <div class="roadtext"></div>
     </div>
-    <div class="team"></div>
-    <div class="faq">
+    <div class="team" id="team"></div>
+    <div class="faq" id="faq">
       <div class="faq-logo"></div>
       <a-collapse v-model="activeKey1" :expand-icon-position="expandIconPosition">
         <a-collapse-panel header="Why Was The Funplay Boy Created">
@@ -228,6 +228,21 @@ export default {
         });
         console.log(res);
       }
+    },
+    goAnchor(id) {
+      var anchor = document.getElementById(id);
+      // chrome
+      document.body.scrollTop = anchor.offsetTop;
+      // firefox
+      document.documentElement.scrollTop = anchor.offsetTop;
+      // safari
+      window.pageYOffset = anchor.offsetTop;
+    },
+    openLink() {
+      window.open(
+        "https://mirror.xyz/0xFBF5b83F534e54870E32f8969dd8F7836AD02CB9/WJJtO9Cal_6y3DI_nJ2JR_NpeKEfzIt78Jktv5hHk7k",
+        "_blank",
+      );
     },
   },
 };
