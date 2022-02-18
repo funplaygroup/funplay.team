@@ -133,7 +133,7 @@
 </template>
 
 <script>
-import { ellipsis } from "../../utils/format";
+import { ellipsis, gasProcessing } from "../../utils/format";
 import vueSeamlessScroll from "vue-seamless-scroll";
 import { FunPlayInstance } from "../../request/abis/call";
 
@@ -190,6 +190,9 @@ export default {
     net() {
       return this.$store.state.Provider.net;
     },
+    web3Js() {
+      return this.$store.state.Provider.web3Js;
+    },
   },
   watch: {
     account() {
@@ -222,9 +225,18 @@ export default {
         this.$message.error("Please select the correct network!");
       } else {
         const FunPlayMethods = FunPlayInstance();
+        let gas = await FunPlayMethods.methods
+          .mintNFTDuringPresale(1)
+          .estimateGas({ from: this.account, value: this.web3Js.utils.toWei("0.05", "ether") });
+        console.log("gas", gas);
+        let gasPrice = await this.web3Js.eth.getGasPrice().then((res) => {
+          return res;
+        });
         let res = await FunPlayMethods.methods.mintNFTDuringPresale(1).send({
           from: this.account,
-          value: 50000000000000000,
+          value: this.web3Js.utils.toWei("0.05", "ether"),
+          gas: gasProcessing(gas),
+          gasPrice: gasPrice,
         });
         console.log(res);
       }
