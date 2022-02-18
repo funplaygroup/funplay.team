@@ -40,25 +40,25 @@ export default {
         try {
           // 请求用户授权
           web3Provider = window.ethereum;
-
-          await web3Provider.request({
-            method: "wallet_addEthereumChain",
-            params: [
-              {
-                chainId: process.env.VUE_APP_CHAIN_ID,
-                chainName: process.env.VUE_APP_CHAIN_NAME,
-                nativeCurrency: {
-                  name: "BNB",
-                  symbol: "bnb",
-                  decimals: 18,
-                },
-                rpcUrls: [process.env.VUE_APP_RPC_URLS],
-                blockExplorerUrls: [process.env.VUE_APP_EXPLORER_URL],
-              },
-            ],
-          });
+          // await web3Provider.request({
+          //   method: "wallet_addEthereumChain",
+          //   params: [
+          //     {
+          //       chainId: process.env.VUE_APP_CHAIN_ID,
+          //       chainName: process.env.VUE_APP_CHAIN_NAME,
+          //       nativeCurrency: {
+          //         name: "ETH",
+          //         symbol: "eth",
+          //         decimals: 18,
+          //       },
+          //       rpcUrls: [process.env.VUE_APP_RPC_URLS],
+          //       blockExplorerUrls: [process.env.VUE_APP_EXPLORER_URL],
+          //     },
+          //   ],
+          // });
           await web3Provider.enable();
         } catch (error) {
+          console.log(error);
           // 用户不授权时
           console.error("User denied account access");
         }

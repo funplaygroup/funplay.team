@@ -29,7 +29,7 @@
       <div class="mint-text-num">7777</div>
       <div class="mint-text-mark">coming soon!</div>
     </div>
-    <div class="mint-btn">MINT</div>
+    <div class="mint-btn" @click="onMint">MINT</div>
     <div class="scroll">
       <vue-seamless-scroll :data="listData" class="warp" :class-option="classOption">
         <ul class="item">
@@ -133,8 +133,10 @@
 </template>
 
 <script>
-import { ellipsis } from "../../../utils/format";
+import { ellipsis } from "../../utils/format";
 import vueSeamlessScroll from "vue-seamless-scroll";
+import { FunPlayInstance } from "../../request/abis/call";
+
 export default {
   components: {
     vueSeamlessScroll,
@@ -185,6 +187,9 @@ export default {
     account() {
       return this.$store.state.Provider.account;
     },
+    net() {
+      return this.$store.state.Provider.net;
+    },
   },
   watch: {
     account() {
@@ -192,6 +197,9 @@ export default {
     },
     activeKey(key) {
       console.log(key);
+    },
+    net() {
+      console.log(this.net);
     },
   },
   created() {
@@ -207,6 +215,19 @@ export default {
     },
     onConnect() {
       this.$store.dispatch("Provider/setWebProvider");
+    },
+    async onMint() {
+      console.log(this.net);
+      if (this.net != 3) {
+        this.$message.error("Please select the correct network!");
+      } else {
+        const FunPlayMethods = FunPlayInstance();
+        let res = await FunPlayMethods.methods.mintNFTDuringPresale(1).send({
+          from: this.account,
+          value: 50000000000000000,
+        });
+        console.log(res);
+      }
     },
   },
 };
@@ -348,6 +369,7 @@ export default {
     height: 52px;
     width: 310px;
     margin: 0 auto;
+    margin-top: 200px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -376,7 +398,7 @@ export default {
   .scroll {
     width: 100%;
     height: 30px;
-    margin-top: 150px;
+    margin-top: 50px;
     border-bottom: 1px solid #fbff33;
     border-top: 1px solid #fbff33;
     .warp {
