@@ -177,7 +177,7 @@ export default {
       window.pageYOffset = anchor.offsetTop;
     },
     toTwitter() {
-      window.open("https://twitter.com/funplaygroup", "_blank");
+      window.open("https://twitter.com/yahtoo_ma", "_blank");
     },
     toGithub() {
       window.open("https://github.com/funplaygroup", "_blank");
